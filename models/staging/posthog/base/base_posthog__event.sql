@@ -1,3 +1,10 @@
+{{
+    config(
+        materialized='view',
+        tags=['posthog', 'base'],
+    )
+
+}}
 with
     source as (select * from {{ source("posthog", "event") }}),
 

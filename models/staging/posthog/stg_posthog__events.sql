@@ -1,3 +1,11 @@
+{{
+    config(
+        materialized='table',
+        tags = ['posthog', 'staging'],
+    )
+
+}}
+
 with
     events as (
         select distinct
