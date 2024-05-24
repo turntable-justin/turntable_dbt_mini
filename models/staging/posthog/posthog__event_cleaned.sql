@@ -1,6 +1,5 @@
 {{
     config(
-        materialized='table',
         tags = ['posthog', 'staging'],
     )
 
@@ -17,7 +16,7 @@ with
                 length(json_value(person_properties, '$.email')) - 2
             ) as email,
             e.event
-        from {{ ref("base_posthog__event") }} e
+        from {{ ref("posthog__event") }} e
         where e.person_is_identified = true
     )
 
@@ -26,5 +25,6 @@ select
     date_sub(
         date(timestamp), interval(extract(dayofweek from timestamp) - 2) day
     ) as week,
+    SPLIT(email, '@')[OFFSET(1)] AS user_domain,
     events.*
 from events

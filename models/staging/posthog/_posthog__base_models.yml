@@ -1,6 +1,6 @@
 version: 2
 models:
- - name: base_posthog__event
+ - name: posthog__event
    columns:
       - name: id
         tests:

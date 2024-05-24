@@ -9,6 +9,6 @@
     )
 }}
 
-select * from {{ ref('base_posthog__event')}}
+select * from {{ ref('posthog__event')}}
 
 {% endsnapshot %}

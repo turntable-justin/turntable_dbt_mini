@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_posthog__events
+  - name: posthog_event__cleaned
     tests:
       - dbt_utils.equal_rowcount:
-          compare_model: ref('base_posthog__event')
+          compare_model: ref('posthog__event')

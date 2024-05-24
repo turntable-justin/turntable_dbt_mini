@@ -1,0 +1,8 @@
+version: 2
+sources:
+  - name: hubspot
+    tables:
+      - name: company
+      - name: deal_company
+      - name: deal
+      - name: deal_stage
